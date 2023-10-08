@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+	return (
+		<>
+			<Header />
+			<AddTask />
+			<ListTasks />
+		</>
+	);
 }
 
-export default App;
+function Header() {
+	return <h1 className='heading'>Todo List</h1>;
+}
+
+function AddTask() {
+	return (
+		<form className='form-add-task'>
+			<input type='text' placeholder='Add task...' />
+			<Button>Add</Button>
+		</form>
+	);
+}
+
+function ListTasks() {
+	return (
+		<ul className='tasks-list'>
+			<Task />
+			<Task />
+			<Task />
+			<Task />
+		</ul>
+	);
+}
+
+function Task() {
+	return (
+		<li className='task'>
+			<label>
+				<input type='checkbox' />
+				<span>Task</span>
+			</label>
+			<span className='delete-btn'>✖</span>
+		</li>
+	);
+}
+
+function Button({ children }) {
+	return <button className='btn'>{children}</button>;
+}

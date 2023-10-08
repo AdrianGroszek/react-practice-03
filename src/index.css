@@ -1,13 +1,98 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+	--black: #222;
+	--white: #eee;
+	--purple: #3c096c;
+	--light-orange: #ff9e00;
+	--dark-orange: #ff6d00;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: var(--white);
+	color: var(--white);
+	font-size: 1.6rem;
+	font-family: sans-serif;
+}
+
+.heading {
+	text-align: center;
+	padding: 1.5rem;
+	color: var(--purple);
+	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+}
+
+.form-add-task {
+	display: flex;
+	justify-content: center;
+	margin: 2rem 0;
+}
+
+input,
+button {
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+	transition: 0.2s;
+}
+
+input[type='text'] {
+	padding: 1rem 2rem;
+	background-color: var(--purple);
+	color: var(--white);
+	border: none;
+	outline: none;
+	border-radius: 25px 0 0 25px;
+}
+
+input::placeholder {
+	color: inherit;
+}
+
+.btn {
+	padding: 0.8rem 2.2rem;
+	color: var(--white);
+	border: none;
+	background: var(--light-orange);
+	cursor: pointer;
+	border-radius: 0 25px 25px 0;
+}
+
+.tasks-list {
+	margin: 0 auto;
+	background-color: var(--purple);
+	max-width: 60rem;
+	border-radius: 4px;
+}
+
+.task {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 3rem;
+}
+
+.task:not(:last-child) {
+	border-bottom: 2px solid var(--white);
+}
+
+.task label {
+	display: flex;
+	align-items: center;
+}
+
+.task label > * {
+	margin-right: 1rem;
+}
+
+.delete-btn {
+	cursor: pointer;
 }
