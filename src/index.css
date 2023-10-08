@@ -54,7 +54,7 @@ input[type='text'] {
 }
 
 input::placeholder {
-	color: inherit;
+	color: rgba(238, 238, 238, 0.5);
 }
 
 .btn {
@@ -64,6 +64,10 @@ input::placeholder {
 	background: var(--light-orange);
 	cursor: pointer;
 	border-radius: 0 25px 25px 0;
+}
+
+.btn:hover {
+	background: rgba(255, 157, 0, 0.8);
 }
 
 .tasks-list {
@@ -95,4 +99,14 @@ input::placeholder {
 
 .delete-btn {
 	cursor: pointer;
+}
+
+.is-done {
+	text-decoration: line-through;
+	color: var(--light-orange);
+}
+
+.no-tasks-text {
+	color: var(--purple);
+	text-align: center;
 }
